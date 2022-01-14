@@ -153,7 +153,7 @@ export default function App() {
 					<button
 						type='button'
 						disabled
-						className='opacity-70 px-4 py-2 text-sm font-medium text-white bg-teal-600 rounded-md  hover:bg-opacity-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75'
+						className='opacity-70 px-4 py-2 text-sm font-medium text-white bg-teal-600 rounded-md  focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75'
 					>
 						Select a Network
 					</button>
