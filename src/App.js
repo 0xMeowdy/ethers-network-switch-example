@@ -101,6 +101,7 @@ export default function App() {
 		}
 
 		if (network === 'Ethereum') {
+			// Ethereum
 			try {
 				await window.ethereum.request({
 					method: 'wallet_switchEthereumChain',
@@ -112,6 +113,7 @@ export default function App() {
 				console.error(error)
 			}
 		} else {
+			// Polygon or BSC
 			try {
 				await window.ethereum.request({
 					method: 'wallet_addEthereumChain',
