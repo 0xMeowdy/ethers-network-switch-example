@@ -1,10 +1,17 @@
-# Ethers network switch example
+# React Moralis Wallet Viewer
 
-```
-npm install
-npm start
-```
+Example of switching connected network in react and ethers
 
-Todo:
+## Instructions
 
--   [ ] Add error handling
+Run the commands
+
+### `npm install`
+
+### `npm start`
+
+## Todo:
+
+-   [x] connect wallet
+-   [x] network change
+-   [ ] user error handling
