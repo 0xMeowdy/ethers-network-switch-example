@@ -1,4 +1,4 @@
-# React Moralis Wallet Viewer
+# Ethers Network Switch Example
 
 Example of switching connected network in react and ethers
 
