@@ -83,7 +83,7 @@ export default function App() {
 		} else if (network === '56') {
 			return 'BSC'
 		} else {
-			return 'Ethereum'
+			return 'Rinkeby'
 		}
 	}
 
@@ -100,12 +100,12 @@ export default function App() {
 			return
 		}
 
-		if (network === 'Ethereum') {
-			// Ethereum
+		if (network === 'Rinkeby') {
+			// Rinkeby
 			try {
 				await window.ethereum.request({
 					method: 'wallet_switchEthereumChain',
-					params: [{ chainId: '0x1' }],
+					params: [{ chainId: '0x4' }],
 				})
 				setSelectedNetwork(network)
 				closeModal()
@@ -133,11 +133,11 @@ export default function App() {
 
 	return (
 		<>
-			<div className='justify-end flex space-x-1 py-4 px-4'>
+			<div className='flex justify-end px-4 py-4 space-x-1'>
 				<button
 					type='button'
 					onClick={connectWallet}
-					className='px-4 py-2 text-sm font-medium text-white bg-teal-600 rounded-md  hover:bg-opacity-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75'
+					className='px-4 py-2 text-sm font-medium text-white bg-teal-600 rounded-md hover:bg-opacity-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75'
 				>
 					{displayAccount ? displayAccount : 'Connect Wallet'}
 				</button>
@@ -145,7 +145,7 @@ export default function App() {
 					<button
 						type='button'
 						onClick={openModal}
-						className='px-4 py-2 text-sm font-medium text-white bg-teal-600 rounded-md  hover:bg-opacity-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75'
+						className='px-4 py-2 text-sm font-medium text-white bg-teal-600 rounded-md hover:bg-opacity-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75'
 					>
 						{selectedNetwork ? selectedNetwork : 'Select Network'}
 					</button>
@@ -153,7 +153,7 @@ export default function App() {
 					<button
 						type='button'
 						disabled
-						className='opacity-70 px-4 py-2 text-sm font-medium text-white bg-teal-600 rounded-md  focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75'
+						className='px-4 py-2 text-sm font-medium text-white bg-teal-600 rounded-md opacity-70 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75'
 					>
 						Select a Network
 					</button>
@@ -195,7 +195,7 @@ export default function App() {
 							leaveFrom='opacity-100 scale-100'
 							leaveTo='opacity-0 scale-95'
 						>
-							<div className='inline-block w-full max-w-sm p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-slate-500 shadow-xl rounded-2xl'>
+							<div className='inline-block w-full max-w-sm p-6 my-8 overflow-hidden text-left align-middle transition-all transform shadow-xl bg-slate-500 rounded-2xl'>
 								<Dialog.Title
 									as='h3'
 									className='text-lg font-medium leading-6 text-white'
@@ -203,22 +203,22 @@ export default function App() {
 									Select a Network
 								</Dialog.Title>
 
-								<div className='mt-8 justify-start flex space-x-1'>
+								<div className='flex justify-start mt-8 space-x-1'>
 									<button
 										type='button'
 										onClick={() => {
-											switchNetwork('Ethereum')
+											switchNetwork('Rinkeby')
 										}}
-										className='px-4 py-2 text-sm font-medium text-white bg-teal-600 rounded-md  hover:bg-opacity-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75'
+										className='px-4 py-2 text-sm font-medium text-white bg-teal-600 rounded-md hover:bg-opacity-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75'
 									>
-										Ethereum
+										Rinkeby
 									</button>
 									<button
 										type='button'
 										onClick={() => {
 											switchNetwork('Polygon')
 										}}
-										className='px-4 py-2 text-sm font-medium text-white bg-teal-600 rounded-md  hover:bg-opacity-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75'
+										className='px-4 py-2 text-sm font-medium text-white bg-teal-600 rounded-md hover:bg-opacity-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75'
 									>
 										Polygon
 									</button>
@@ -227,7 +227,7 @@ export default function App() {
 										onClick={() => {
 											switchNetwork('BSC')
 										}}
-										className='px-4 py-2 text-sm font-medium text-white bg-teal-600 rounded-md  hover:bg-opacity-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75'
+										className='px-4 py-2 text-sm font-medium text-white bg-teal-600 rounded-md hover:bg-opacity-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75'
 									>
 										BSC
 									</button>
